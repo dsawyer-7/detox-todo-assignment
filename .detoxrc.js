@@ -12,11 +12,11 @@ module.exports = {
     android: {
       type: 'android.apk',
       binaryPath: 'android/app/build/outputs/apk/release/app-release.apk',
-      build: 'cd android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release',
+      build: 'cd android && gradlew.bat assembleRelease assembleAndroidTest -DtestBuildType=release',
     },
   },
   devices: {
-    simulator: {
+    emulator: {
       type: 'android.emulator',
       device: {
         avdName: 'Pixel_3_API_30',
@@ -25,7 +25,7 @@ module.exports = {
   },
   configurations: {
     'android.debug': {
-      device: 'simulator',
+      device: 'emulator',
       app: 'android',
     },
   },
