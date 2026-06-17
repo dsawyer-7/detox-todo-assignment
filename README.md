@@ -1,1 +1,47 @@
-\# Detox Take-Home Assignment - QA Engineer (US App)\## App Chosen \& WhyI created a new React Native project using the official template (`npx react-native init`).  I chose this because it is publicly available, gave me full control over the codebase, allowed me to add proper testIDs for reliable testing, and enabled me to focus on demonstrating clean Detox implementation and testing strategy within the recommended 3-hour limit.\## Testing StrategyI focused on the most critical and high-risk user flows that exist in nearly every mobile app:\- Successful app launch\- UI element visibility and rendering\- Basic user interactions (text input and button taps)I prioritized these areas because they represent core user experience and are common sources of defects. I kept the scope to 5 focused tests to ensure quality rather than quantity.\## Test Cases| Test ID | Description                              | Type     | Rationale ||---------|------------------------------------------|----------|---------|| TC001   | App launches successfully                | Positive | Most critical first step || TC002   | Welcome text is visible on screen        | Positive | Verifies correct initial rendering || TC003   | User can type text into the input field  | Positive | Tests basic user input || TC004   | Add button is visible and interactive    | Positive | Core action element || TC005   | Task list area is present                | Positive | Main content visibility |\## Implementation Notes\- Followed official Detox documentation for setup.\- Added `testID` props to key components for stable element selection.\- Used `by.id()` matchers for reliability.\- Tests are organized using `describe` and `it` blocks for readability and maintainability.\## Challenges \& Solutions\- \*\*Challenge\*\*: Element selection required additional setup.  &#x20; \*\*Solution\*\*: Added explicit `testID` props in `App.tsx` and used `by.id()` selectors.\- \*\*Challenge\*\*: Environment setup took time on first attempt.  &#x20; \*\*Solution\*\*: Started with a fresh React Native project and followed the official guide step-by-step.\## How to Run the Tests1\. Install dependencies:&#x20;  ```bash&#x20;  npm install
+# Detox Take-Home Assignment - QA Engineer (US App)
+
+## App Chosen & Why
+I created a new React Native project using the official template. I chose this because it is publicly available, clean, and gave me full control to add proper testIDs and demonstrate a realistic testing approach within the recommended 3-hour limit.
+
+## Testing Strategy
+I focused on the most critical user flows that are foundational to any mobile app:
+- Successful app launch
+- UI element visibility
+- Basic user interactions (text input and button taps)
+
+I kept the scope to 5 focused tests to ensure they were reliable and well-structured rather than rushing many shallow tests.
+
+## Test Cases
+
+| Test ID | Description                              | Type     | Rationale |
+|---------|------------------------------------------|----------|---------|
+| TC001   | App launches successfully                | Positive | Most fundamental check |
+| TC002   | Welcome text is displayed correctly      | Positive | Verifies initial rendering |
+| TC003   | User can input text into the task field  | Positive | Core data entry flow |
+| TC004   | Add button is visible and functional     | Positive | Primary action element |
+| TC005   | Task list area is present                | Positive | Main content visibility |
+
+## Implementation Notes
+- Used Detox following the official documentation.
+- Added `testID` props to key components for stable element selection.
+- Used `by.id()` matchers for reliability.
+- Tests are organized with clear `describe` and `it` blocks for readability.
+
+## Challenges & Solutions
+- **Challenge**: Setting up Detox environment from scratch.  
+  **Solution**: Followed the official guide step-by-step and used a fresh React Native project.
+
+- **Challenge**: Making elements reliably selectable.  
+  **Solution**: Added explicit `testID` props in `App.tsx`.
+
+## How to Run the Tests
+
+1. Install dependencies:
+   ```bash
+   npm install
+2. Build the app for Detox:
+   ```bash
+   npm run detox:build
+3. Run the tests:
+   ```bash
+   npm run detox:test
