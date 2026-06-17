@@ -1,4 +1,4 @@
-# Detox Take-Home Assignment - QA Engineer (US App)
+# Detox Take-Home Assignment
 
 ## App Chosen & Why
 I created a new React Native project using the official template (`npx react-native init`).  
