@@ -34,8 +34,7 @@ I chose 5 focused tests to ensure quality and reliability rather than breadth, w
   **Solution**: Added explicit testIDs.
 
 ## How to Run the Tests
+**Note**: Due to environment constraints (JVM 17 requirement), I was unable to complete the full `detox build` on the available machine. The test structure, configuration, and code are ready and should work on a standard development environment with JVM 17+.
 1. `npm install`
 2. `npm run detox:build` (requires JVM 17+)
 3. `npm run detox:test`
-
-**Note**: Due to environment constraints (JVM version), the full build could not be completed on the available machine. The test structure and configuration are ready for a compatible environment.
